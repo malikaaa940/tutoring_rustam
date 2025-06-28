@@ -1,6 +1,6 @@
 package hw;
 
-public class Player {
+public abstract class Player {
 
     private String name;
     private int health;
@@ -24,25 +24,19 @@ public class Player {
 
 
     public void takeDamage(int damage) {
+        if(health >= 0) {
 
-        health -= damage;
-
-
-
-
+            health -= damage;
+        }
     }
 
     public boolean isAlive(){
 
         return getHealth() > 0;
-
-
     }
 
 
     public String getName(){
         return name;
     }
-
-
 }

@@ -1,15 +1,10 @@
 package hw;
 
-public class Warrior extends Player implements Fighter{
+public class Rogue extends Player implements Fighter {
 
-    public Warrior(String name, int health, int attackPower) {
-
+    public Rogue(String name, int health, int attackPower) {
         super(name, health, attackPower);
-
-
-
     }
-
     public void attack(Fighter opponent){
         if(opponent.isAlive()){
 
@@ -17,15 +12,18 @@ public class Warrior extends Player implements Fighter{
         }
     }
 
+
+
     @Override
     public void takeDamage(int damage) {
 
         if (getHealth() > 0){
 
-            setHealth(getHealth() * 10 -  damage);
+            setHealth(getHealth());
+
+            setHealth(getHealth() -  damage);
         }
 
     }
-
 
 }
