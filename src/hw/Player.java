@@ -1,20 +1,36 @@
 package hw;
 
-public abstract class Player {
+public abstract class Player implements Fighter {
 
-    private String name;
-    private int health;
-    private int attackPower;
+    protected String name;
+    protected int health;
+    protected int attackPower;
 
-    public Player(String name, int health, int attackPower ) {
-
+    public Player(String name, int health, int attackPower) {
         this.name = name;
         this.health = health;
         this.attackPower = attackPower;
     }
 
-    public int getHealth() {
+    @Override
+    public void takeDamage(int damage) {
+        health -= damage;
+        if (health < 0) {
+            health = 0;
+        }
+    }
 
+    @Override
+    public boolean isAlive() {
+        return health > 0;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public int getHealth() {
         return health;
     }
 
@@ -22,21 +38,11 @@ public abstract class Player {
         this.health = health;
     }
 
-
-    public void takeDamage(int damage) {
-        if(health >= 0) {
-
-            health -= damage;
-        }
+    public int getAttackPower() {
+        return attackPower;
     }
 
-    public boolean isAlive(){
-
-        return getHealth() > 0;
-    }
-
-
-    public String getName(){
-        return name;
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
     }
 }

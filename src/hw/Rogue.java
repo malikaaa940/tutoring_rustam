@@ -2,8 +2,8 @@ package hw;
 
 public class Rogue extends Player implements Fighter {
 
-    public Rogue(String name, int health, int attackPower) {
-        super(name, health, attackPower);
+    public Rogue(String name) {
+        super(name, 70, 80);
     }
     public void attack(Fighter opponent){
         if(opponent.isAlive()){

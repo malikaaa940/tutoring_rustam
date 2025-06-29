@@ -2,9 +2,9 @@ package hw;
 
 public class Warrior extends Player implements Fighter{
 
-    public Warrior(String name, int health, int attackPower) {
+    public Warrior(String name) {
 
-        super(name, health, attackPower);
+        super(name, 70, 70);
 
 
 
